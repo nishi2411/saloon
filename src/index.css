@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-[#f6efe8] text-ink antialiased;
+    font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+    background-image:
+      radial-gradient(circle at top left, rgba(221, 111, 53, 0.18), transparent 30%),
+      radial-gradient(circle at top right, rgba(60, 102, 88, 0.16), transparent 28%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(249, 245, 240, 0.94));
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Fraunces", Georgia, serif;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/70 bg-white/75 shadow-float backdrop-blur-xl;
+  }
+
+  .soft-panel {
+    @apply rounded-2xl border border-brand-100 bg-white/85 shadow-lg shadow-brand-100/30;
+  }
+
+  .label-text {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.24em] text-slate-500;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-sm text-slate-700 transition placeholder:text-slate-400 focus:border-brand-300 focus:ring-2 focus:ring-brand-200/70;
+  }
+
+  .select-field {
+    @apply input-field appearance-none;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:bg-slate-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-200 hover:text-brand-700;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900;
+  }
+
+  .stat-card {
+    @apply glass-panel p-5;
+  }
+
+  .table-shell {
+    @apply overflow-hidden rounded-3xl border border-white/70 bg-white/80 shadow-float;
+  }
+
+  .table-head {
+    @apply bg-slate-900 text-left text-xs font-semibold uppercase tracking-[0.24em] text-slate-200;
+  }
+
+  .table-cell {
+    @apply border-b border-slate-100 px-4 py-4 text-sm text-slate-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+}
